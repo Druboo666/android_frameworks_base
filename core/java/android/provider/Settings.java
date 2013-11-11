@@ -3398,6 +3398,24 @@ public final class Settings {
         public static final String STATUS_BAR_COLOR = "status_bar_color";
 
         /**
+         * Whether to wake the screen with the camera key half-press.
+         * @hide
+         */
+        public static final String CAMERA_WAKE_SCREEN = "camera_wake_screen";
+
+        /**
+         * Whether or not to send device back to sleep if Camera button is released ("Peek")
+         * @hide
+         */
+        public static final String CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+
+        /**
+         * Whether or not camera button music controls should be enabled to play/pause media tracks
+         * @hide
+         */
+        public static final String CAMERA_MUSIC_CONTROLS = "camera_music_controls";
+
+        /**
          * Status icon color. May include alpha
          * Format: AARRGGBB|AARRGGBB|index[|speed]
          * First color is the primary, systemwide color
@@ -4042,6 +4060,13 @@ public final class Settings {
         public static final String RECENT_KILL_ALL_BUTTON = "recent_kill_all_button";
 
         /**
+         * whether to hide the app shortcuts on recent switcher
+         *
+         * @hide
+         */
+        public static final String RECENT_APP_SHORTCUTS = "recent_app_shortcuts";
+
+        /**
          * whether to enable end app on back longpress functionality
          *
          * @hide
@@ -4183,6 +4208,12 @@ public final class Settings {
          * @hide
          */
         public static final String QUIET_HOURS_HAPTIC = "quiet_hours_haptic";
+
+        /**
+         * Whether to remove the system sounds during quiet hours.
+         * @hide
+         */
+        public static final String QUIET_HOURS_SYSTEM = "quiet_hours_system";
 
         /**
          * Whether to remove the vibration from outgoing notifications during quiet hours.
@@ -4986,6 +5017,12 @@ public final class Settings {
         public static final String GESTURE_SWIPE_CAPTURE = "gesture_swipe_capture";
 
         /**
+         * Whether to unlock the screen with the camera key.  The value is boolean (1 or 0).
+         * @hide
+         */
+        public static final String CAMERA_UNLOCK_SCREEN = "camera_unlock_screen";
+
+        /**
          * @hide
          */
         public static final String GESTURE_SWIPE_DISTANCE = "gesture_swipe_distance";
@@ -4999,6 +5036,11 @@ public final class Settings {
          * @hide
          */
         public static final String GESTURE_BLACKLIST = "gesture_blacklist";
+
+        /**
+         * @hide
+         */
+        public static final String LOCKSCREEN_MAXIMIZE_WIDGETS = "lockscreen_maximize_widgets";
 
         /**
          * Notifications Expand Behavior
@@ -5113,6 +5155,7 @@ public final class Settings {
             QUIET_HOURS_START,
             QUIET_HOURS_END,
             QUIET_HOURS_MUTE,
+            QUIET_HOURS_SYSTEM,
             QUIET_HOURS_STILL,
             QUIET_HOURS_DIM,
             SYSTEM_PROFILES_ENABLED,
@@ -7389,12 +7432,6 @@ public final class Settings {
         public static final String POWER_SOUNDS_ENABLED = "power_sounds_enabled";
 
         /**
-         * Whether to allow killing of the foreground app by long-pressing the Back button
-         * @hide
-         */
-        public static final String KILL_APP_LONGPRESS_BACK = "kill_app_longpress_back";
-
-	/**
          * Whether to sound when charger power is connected/disconnected
          * @hide
          */
